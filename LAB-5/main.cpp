@@ -75,13 +75,14 @@ void transferStack(Stack* source, Stack* destination) {
 
     while (!isQueueEmpty(&tempQueue)) {
         int data = dequeue(&tempQueue);
-        push(destination, data);
+        push(source, data);
     }
 
-    // TODO:
-    // Use the push, pop, enqueue, and dequeue functions
-    // to move elements from 'source' to 'destination'
-    // while keeping the exact same order.
+
+    while (!isStackEmpty(source)) {
+        int data = pop(source);
+        push(destination, data);
+    }
 
 
 
